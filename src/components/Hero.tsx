@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Award, Code, Cpu } from 'lucide-react';
+import { ChevronDown, Award, Code, Cpu, Brain, Server } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
