@@ -82,13 +82,13 @@ const Hero: React.FC = () => {
             {/* Featured Project */}
             <div className="group">
               <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 h-full transition-all duration-300 hover:scale-105 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-500/10">
-                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg mb-6 group-hover:scale-110 transition-transform">
+              <p className="text-gray-300 max-w-2xl lg:mx-0 mx-auto leading-relaxed">
                   <Code className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-purple-400">Seimbang.in</h3>
                 <p className="text-gray-300 leading-relaxed">
                   1st Place winner GENETIC USM & Top 50 Bangkit Capstone. 
-                  AI-powered nutrition app for balanced meal planning.
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
                 </p>
               </div>
             </div>
@@ -147,7 +147,5 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-  )
-}
   )
 }
