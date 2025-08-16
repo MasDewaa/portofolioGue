@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronDown, Award, Code, Cpu, Brain, Server } from 'lucide-react';
+import BandScene from './band/BandScene'; // Import BandScene
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -49,35 +50,9 @@ const Hero: React.FC = () => {
               <ChevronDown className="w-8 h-8 mx-auto text-gray-400" />
             </div>
           </div>
-          {/* Right Photo */}
-          <div className="relative lg:block hidden">
-            <div className="relative">
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-full blur-3xl"></div>
-              {/* Photo container */}
-              <div className="relative z-10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 animate-float">
-                <div className="relative overflow-hidden rounded-xl">
-                  <img
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
-                    alt="Rama Syailana Dewa - ML & Back-End Developer"
-                    className="w-full h-96 object-cover object-center transition-transform duration-300 hover:scale-105"
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-                </div>
-                {/* Tech stack indicators */}
-                <div className="absolute -right-2 top-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-2 shadow-lg">
-                  <Brain className="w-5 h-5 text-white" />
-                </div>
-                <div className="absolute -left-2 bottom-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg p-2 shadow-lg">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
-                <div className="absolute -right-2 bottom-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg p-2 shadow-lg">
-                  <Server className="w-5 h-5 text-white" />
-                </div>
-              </div>
-            </div>
+          {/* Right Section */}
+          <div className="relative">
+            <BandScene /> {/* Replace photo with BandScene */}
           </div>
         </div>
       </div>
