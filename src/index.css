@@ -75,3 +75,69 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+@layer components {
+  .heading-gradient {
+    @apply bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-16 heading-gradient;
+  }
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-gray-300 mb-4;
+  }
+  .section-paragraph {
+    @apply text-lg text-gray-400 mb-8 leading-relaxed;
+  }
+  .card {
+    @apply bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 transition-all duration-300 shadow-lg shadow-indigo-500/5 hover:scale-105 hover:border-indigo-400/50 hover:shadow-xl;
+  }
+  .card-emerald {
+    @apply hover:border-emerald-400/50 hover:shadow-emerald-500/10;
+  }
+  .card-purple {
+    @apply hover:border-purple-400/50 hover:shadow-purple-500/10;
+  }
+  .card-yellow {
+    @apply hover:border-yellow-400/50 hover:shadow-yellow-500/10;
+  }
+  .card-orange {
+    @apply hover:border-orange-400/50 hover:shadow-orange-500/10;
+  }
+  .section-divider {
+    @apply w-full h-1 my-12 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-full opacity-60;
+  }
+  .section-glass {
+    @apply bg-slate-800/60 backdrop-blur-md border border-slate-700/40 rounded-2xl shadow-2xl shadow-indigo-500/10 p-4 md:p-8;
+  }
+  .section-title-accent {
+    @apply pl-4 border-l-4 border-indigo-400;
+    /* Untuk gradasi border kiri, gunakan pseudo-element di komponen React jika ingin efek lebih lanjut */
+  }
+  .blob-bg {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.18;
+    pointer-events: none;
+    filter: blur(0.5rem);
+    animation: blobFloat 12s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes blobFloat {
+  0% { transform: scale(1) translateY(0) translateX(0); }
+  50% { transform: scale(1.1) translateY(-30px) translateX(20px); }
+  100% { transform: scale(1) translateY(0) translateX(0); }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+  h1, .text-5xl, .text-7xl {
+    font-size: 2.25rem;
+  }
+  h2, .text-4xl, .text-5xl {
+    font-size: 1.75rem;
+  }
+}

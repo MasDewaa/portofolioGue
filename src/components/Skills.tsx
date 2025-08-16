@@ -81,73 +81,63 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" className="py-16 px-4 sm:px-6 md:px-8 animate-fade-in">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Skills & Certifications
-          </span>
+        <h2 className="section-title" data-aos="fade-up">
+          Skills & Certifications
         </h2>
-
+        <div className="section-divider mb-8" />
         {/* Technical Skills */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold mb-8 flex items-center">
+          <h3 className="text-2xl font-bold mb-8 flex items-center" data-aos="fade-up">
             <Code className="w-6 h-6 mr-3 text-indigo-400" />
             Technical Skills
           </h3>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
-              <div key={index} className="group">
-                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 h-full transition-all duration-300 hover:scale-105 hover:border-indigo-400/50 hover:shadow-lg hover:shadow-indigo-500/10">
-                  <div className="flex items-center mb-4">
-                    <div className={`flex items-center justify-center w-10 h-10 bg-gradient-to-br ${category.gradient} rounded-lg mr-3`}>
-                      {category.icon}
+              <div key={index} className="group card hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className={`flex items-center mb-4`}>
+                  <div className={`flex items-center justify-center w-10 h-10 bg-gradient-to-br ${category.gradient} rounded-lg mr-3`}>
+                    {category.icon}
+                  </div>
+                  <h4 className="text-lg font-bold text-white">{category.title}</h4>
+                </div>
+                <div className="space-y-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className="flex items-center gap-2 px-3 py-2 bg-slate-700/30 border border-slate-600/30 rounded-lg text-gray-300 text-sm transition-all duration-300 hover:bg-slate-600/50 hover:text-white"
+                    >
+                      <span>{skill}</span>
+                      <span className="flex-1 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full ml-2" style={{width: `${80 - skillIndex * 10}%`, minWidth: '40px', maxWidth: '100px'}}></span>
                     </div>
-                    <h4 className="text-lg font-bold text-white">{category.title}</h4>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skillIndex}
-                        className="px-3 py-2 bg-slate-700/30 border border-slate-600/30 rounded-lg text-gray-300 text-sm transition-all duration-300 hover:bg-slate-600/50 hover:text-white"
-                      >
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </div>
-
         {/* Certifications */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="400">
           <h3 className="text-2xl font-bold mb-8 flex items-center">
             <Award className="w-6 h-6 mr-3 text-yellow-400" />
             Featured Certifications
           </h3>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {certifications.filter(cert => cert.featured).map((cert, index) => (
-              <div key={index} className="group">
-                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 h-full transition-all duration-300 hover:scale-105 hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-500/10">
-                  <div className="flex items-center mb-4">
-                    <div className="text-2xl mr-3">{cert.logo}</div>
-                    <div>
-                      <h4 className="text-lg font-bold text-yellow-400">{cert.title}</h4>
-                      <p className="text-gray-400 text-sm">{cert.issuer}</p>
-                    </div>
+              <div key={index} className="group card card-yellow hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="flex items-center mb-4">
+                  <div className="text-2xl mr-3">{cert.logo}</div>
+                  <div>
+                    <h4 className="text-lg font-bold text-yellow-400">{cert.title}</h4>
+                    <p className="text-gray-400 text-sm">{cert.issuer}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
           {/* Other Certifications */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+          <div className="card" data-aos="fade-up" data-aos-delay="600">
             <h4 className="text-xl font-bold text-white mb-6">Other Certifications</h4>
             <div className="grid md:grid-cols-2 gap-4">
               {certifications.filter(cert => !cert.featured).map((cert, index) => (
@@ -160,7 +150,6 @@ const Skills: React.FC = () => {
                 </div>
               ))}
             </div>
-            
             <div className="mt-6 pt-6 border-t border-slate-600/50">
               <button className="flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors">
                 <ExternalLink className="w-4 h-4" />

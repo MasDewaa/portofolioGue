@@ -3,17 +3,15 @@ import { GraduationCap, Users, Target } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-16 px-4 sm:px-6 md:px-8 animate-fade-in">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            About Me
-          </span>
+        <h2 className="section-title" data-aos="fade-up">
+          About Me
         </h2>
-
+        <div className="section-divider mb-8" />
         {/* Introduction */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+        <div className="mb-16" data-aos="fade-up" data-aos-delay="100">
+          <div className="card shadow-xl border border-indigo-400/20">
             <p className="text-gray-300 leading-relaxed text-lg mb-6">
               I am an Informatics student at Amikom University Yogyakarta with a deep interest 
               in data science and technology. My journey began with fascination for data patterns 
@@ -27,16 +25,15 @@ const About: React.FC = () => {
             </p>
           </div>
         </div>
-
-        {/* Education */}
-        <div className="mb-16">
+        {/* Education Timeline */}
+        <div className="mb-16" data-aos="fade-up" data-aos-delay="200">
           <h3 className="text-2xl font-bold mb-8 flex items-center">
             <GraduationCap className="w-6 h-6 mr-3 text-indigo-400" />
             Education
           </h3>
-          
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
+          <div className="space-y-6 border-l-4 border-indigo-400/30 pl-6">
+            <div className="card relative" data-aos="fade-right">
+              <span className="absolute -left-8 top-6 w-5 h-5 bg-indigo-400 rounded-full border-4 border-white"></span>
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                 <h4 className="text-xl font-semibold text-indigo-400">Amikom University Yogyakarta</h4>
                 <span className="text-gray-400">2022 - Present</span>
@@ -44,8 +41,8 @@ const About: React.FC = () => {
               <p className="text-gray-300 mb-2">Bachelor of Informatics</p>
               <p className="text-emerald-400 font-semibold">GPA: 3.91/4.00</p>
             </div>
-
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
+            <div className="card relative" data-aos="fade-right" data-aos-delay="100">
+              <span className="absolute -left-8 top-6 w-5 h-5 bg-purple-400 rounded-full border-4 border-white"></span>
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                 <h4 className="text-xl font-semibold text-indigo-400">SMA Negeri 1 Sragen</h4>
                 <span className="text-gray-400">2019 - 2022</span>
@@ -55,15 +52,14 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Organization Experience */}
-        <div className="mb-16">
+        {/* Organization Experience Timeline */}
+        <div className="mb-16" data-aos="fade-up" data-aos-delay="300">
           <h3 className="text-2xl font-bold mb-8 flex items-center">
             <Users className="w-6 h-6 mr-3 text-purple-400" />
             Organizational & Leadership Experience
           </h3>
-          
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+          <div className="card border-l-4 border-purple-400/30 pl-6 relative">
+            <span className="absolute -left-8 top-8 w-5 h-5 bg-purple-400 rounded-full border-4 border-white"></span>
             <h4 className="text-xl font-semibold text-purple-400 mb-4">Amikom Computer Club</h4>
             <div className="space-y-4">
               <div>
@@ -85,15 +81,14 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-
         {/* Goals */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="400">
           <h3 className="text-2xl font-bold mb-8 flex items-center">
             <Target className="w-6 h-6 mr-3 text-emerald-400" />
             Vision & Mission
           </h3>
-          
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+          <div className="card border-l-4 border-emerald-400/30 pl-6 relative">
+            <span className="absolute -left-8 top-8 w-5 h-5 bg-emerald-400 rounded-full border-4 border-white"></span>
             <p className="text-gray-300 leading-relaxed text-lg">
               My vision is to become a developer who can create technology solutions that are not only 
               technically innovative, but also provide real impact for society. I am committed 

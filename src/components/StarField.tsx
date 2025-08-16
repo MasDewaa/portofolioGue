@@ -22,7 +22,7 @@ const StarField: React.FC = () => {
         y: Math.random() * canvas.height,
         size: Math.random() * 2,
         opacity: Math.random(),
-        twinkle: Math.random() * 0.02,
+        twinkle: (Math.random() * 0.01 + 0.005) * (Math.random() > 0.5 ? 1 : -1), // lebih lambat dan halus
       });
     }
 
@@ -30,14 +30,19 @@ const StarField: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       stars.forEach((star) => {
-        star.opacity += star.twinkle;
-        if (star.opacity > 1 || star.opacity < 0) {
-          star.twinkle = -star.twinkle;
+        // easing twinkle
+        star.opacity += star.twinkle * 0.7;
+        if (star.opacity > 1) {
+          star.opacity = 1;
+          star.twinkle *= -1;
         }
-
+        if (star.opacity < 0.2) {
+          star.opacity = 0.2;
+          star.twinkle *= -1;
+        }
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(star.opacity)})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
         ctx.fill();
       });
 
