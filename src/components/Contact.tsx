@@ -24,28 +24,24 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-16 px-4 sm:px-6 md:px-8 animate-fade-in">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Contact Me
-          </span>
+        <h2 className="section-title" data-aos="fade-up">
+          Contact Me
         </h2>
-
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="section-divider mb-8" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Information */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="100">
             <h3 className="text-2xl font-bold mb-8 text-white">Let's Collaborate</h3>
-            
             <p className="text-gray-300 leading-relaxed mb-8">
               I'm always open to discussions about exciting projects, collaboration opportunities, 
               or just sharing ideas about technology. Don't hesitate to reach out!
             </p>
-
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-lg">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -58,10 +54,9 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-
               {/* LinkedIn */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg shadow-lg">
                   <Linkedin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -76,10 +71,9 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-
               {/* GitHub */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-gray-500 to-slate-600 rounded-lg">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-gray-500 to-slate-600 rounded-lg shadow-lg">
                   <Github className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -94,10 +88,9 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-
               {/* Location */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg shadow-lg">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -107,15 +100,13 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-
           {/* Contact Form */}
-          <div>
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div className="card hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 flex items-center text-white">
                 <MessageCircle className="w-6 h-6 mr-3 text-indigo-400" />
                 Send Message
               </h3>
-
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
@@ -133,7 +124,6 @@ const Contact: React.FC = () => {
                     placeholder="Enter your name"
                   />
                 </div>
-
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
@@ -150,7 +140,6 @@ const Contact: React.FC = () => {
                     placeholder="name@email.com"
                   />
                 </div>
-
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
@@ -167,7 +156,6 @@ const Contact: React.FC = () => {
                     placeholder="Tell me about the project or idea you'd like to discuss..."
                   />
                 </div>
-
                 {/* Submit Button */}
                 <button
                   type="submit"
@@ -178,9 +166,8 @@ const Contact: React.FC = () => {
                 </button>
               </form>
             </div>
-
             {/* Quick Contact */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-400/20 rounded-xl">
+            <div className="mt-8 p-6 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-400/20 rounded-xl" data-aos="fade-up" data-aos-delay="300">
               <h4 className="text-lg font-semibold text-indigo-400 mb-2">Quick Response</h4>
               <p className="text-gray-300 text-sm">
                 I usually respond to emails within 24 hours. For more in-depth discussions, 
