@@ -18,13 +18,12 @@ useTexture.preload(TEXTURE_PATH);
 export default function BandScene() {
   return (
     <div className="responsive-wrapper">
-      <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
+      <Canvas camera={{ position: [0, 0, 13], fov: 25 }} style={{ opacity: 1 }}>
         <ambientLight intensity={Math.PI} />
         <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
           <Band />
         </Physics>
-        <Environment background blur={0.75}>
-          <color attach="background" args={['black']} />
+        <Environment background={false} blur={0.75}>
           <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
           <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
           <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
