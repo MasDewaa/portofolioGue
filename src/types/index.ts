@@ -60,3 +60,17 @@ export interface ContactInfo {
     instagram: string;
   };
 }
+
+export interface Article {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  publishedDate: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  featured?: boolean;
+  image?: string;
+  url?: string;
+}

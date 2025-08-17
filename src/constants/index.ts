@@ -10,6 +10,7 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
+  { id: 'articles', label: 'Articles' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -119,6 +120,13 @@ export const ACHIEVEMENTS: Achievement[] = [
     id: '3',
     title: 'IoT Innovation',
     description: 'Developed smart solutions combining hardware and software for real-world applications',
+    icon: React.createElement(Cpu, { className: 'w-8 h-8' }),
+    gradient: 'from-green-400 to-blue-500'
+  },
+  {
+    id: '4',
+    title: 'Testing',
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit',
     icon: React.createElement(Cpu, { className: 'w-8 h-8' }),
     gradient: 'from-green-400 to-blue-500'
   }
