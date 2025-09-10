@@ -1,7 +1,7 @@
 // Introduction paragraphs for About section
 export const introductionData = [
-  "I am an Informatics student at Amikom University Yogyakarta with a deep interest in data science and technology. My journey began with fascination for data patterns that can provide valuable insights to solve real-world problems.",
-  "My Informatics education background provides a strong foundation in programming and algorithms, which I then deepened towards Machine Learning, IoT, and Back-End Development. I believe that technology can be a catalyst for creating innovative solutions that have a positive impact on society."
+  "I am an Informatics student with a strong background in Machine Learning, Back-End Development, and Full-Stack Web Applications. I have hands-on experience building award-winning projects, including AI-powered financial management apps, blockchain-based certificate systems, and cultural heritage platforms. ", 
+  "With a solid foundation in data science and software engineering, proven by multiple hackathon wins and a top distinction in the Bangkit Machine Learning program, I am eager to contribute my skills to impactful projects while continuously learning and growing as a professional."
 ];
 
 // Section configurations

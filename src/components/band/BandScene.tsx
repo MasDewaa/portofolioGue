@@ -9,8 +9,8 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-const GLTF_PATH = '/assets/kartu.glb';
-const TEXTURE_PATH = '/assets/band.png';
+const GLTF_PATH = '/assets/Scene.gltf';
+const TEXTURE_PATH = '/assets/Frame 1.png';
 
 useGLTF.preload(GLTF_PATH);
 useTexture.preload(TEXTURE_PATH);
