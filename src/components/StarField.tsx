@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const StarField: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -42,7 +44,9 @@ const StarField: React.FC = () => {
         }
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        // Dynamic star color based on theme
+        const starColor = theme === 'dark' ? '255, 255, 255' : '100, 116, 139';
+        ctx.fillStyle = `rgba(${starColor}, ${star.opacity})`;
         ctx.fill();
       });
 
@@ -61,13 +65,12 @@ const StarField: React.FC = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 pointer-events-none"
-      style={{ background: 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)' }}
+      className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-blue-100 to-blue-200 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300"
     />
   );
 };
